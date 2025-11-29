@@ -1,0 +1,197 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* More modern background */
+    margin: 0;
+}
+
+#player-container {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 380px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Player Controls Section --- */
+#player-controls {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+/* NEW: Cover Art */
+#cover-art-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#cover-art {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    object-fit: cover; /* Ensures non-square images fill the box nicely */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Track Info */
+#track-info {
+    margin-bottom: 15px;
+}
+
+#current-track-title {
+    font-size: 1.3em;
+    color: #333;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#current-track-artist {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #777;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+/* Progress Bar and Time */
+#progress-container {
+    margin-bottom: 15px;
+}
+
+/* General Range Input Styling (Progress & Volume) */
+input[type=range] {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    background: #e0e0e0;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+     transform: scale(1.2);
+}
+
+#time-display {
+    text-align: right;
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Control Buttons */
+#control-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.control-btn {
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: color 0.2s, transform 0.1s;
+}
+
+.main-btn {
+    font-size: 2.5em; /* Make play/pause bigger */
+}
+
+.control-btn:hover {
+    color: #0056b3;
+}
+
+.control-btn:active {
+    transform: scale(0.9);
+}
+
+/* NEW & MERGED: Volume Control */
+#volume-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #666;
+}
+
+#volume-bar {
+    width: 120px; /* Specific width for volume */
+}
+
+
+/* --- Song List Section --- */
+#song-list-container {
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+#song-list-container h4 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#song-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px; /* Limit height if list is long */
+    overflow-y: auto;  /* Scroll if needed */
+}
+
+.song-item {
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 0.9em;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.song-item div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+}
+
+.song-item small {
+    color: #999;
+}
+
+.song-item:hover {
+    background-color: #f0f0f5;
+}
+
+.song-item.active {
+    background-color: #e0f0ff;
+    color: #007bff;
+}
